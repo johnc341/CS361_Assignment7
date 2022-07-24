@@ -6,17 +6,30 @@
 
 import zmq
 
-context = zmq.Context()
+def gameclient():
 
-#  Socket to talk to server
-print("Connecting to combatserver…")
-socket = context.socket(zmq.REQ)
-socket.connect("tcp://localhost:5555")
+    while True:
+        context = zmq.Context()
 
-#  Request a fight
-print("Sending request for a fight")
-socket.send_string("Fight")
+        user_input = input("What would you like to do? ")
 
-#  Get the reply.
-message = socket.recv()
-print("Received reply [ %s ]" % (message))
+        if user_input == "Fight":
+
+            #  Socket to talk to server
+            print("Connecting to combatserver…")
+            socket = context.socket(zmq.REQ)
+            socket.connect("tcp://localhost:5555")
+
+            #  Request a fight
+            print("Sending request for a fight")
+            socket.send_string("Fight")
+
+            #  Get the reply.
+            message = socket.recv()
+            print("Received reply [ %s ]" % (message))
+    
+        else:
+            print("unknown option")
+            return False
+
+gameclient()
