@@ -22,3 +22,5 @@ format:
 Line 30 of gameclient.py shows a sample implementation of how to receive the string from the port. 
 Line 32 of gameclient.py shows how the received string can be converted to dictionary format for use in your
 project.
+
+![9](https://user-images.githubusercontent.com/86032576/180683636-054f70a5-ee5d-4634-92b3-7743fd5c578e.jpg)
