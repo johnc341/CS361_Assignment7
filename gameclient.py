@@ -1,10 +1,12 @@
 #
 #   Game client in Python
 #   Connects REQ socket to tcp://localhost:5555
-#   Sends "Fight" to server, expects back a JSON of the randomly selected enemy
+#   Sends "Fight" to server, expects back a string containing
+#   a dictionary of the randomly selected enemy
 #
 
 import zmq
+import ast
 
 def gameclient():
 
@@ -25,8 +27,10 @@ def gameclient():
             socket.send_string("Fight")
 
             #  Get the reply.
-            message = socket.recv()
+            message = socket.recv_string()
             print("Received reply [ %s ]" % (message))
+            result = ast.literal_eval(message)
+            print(result["enemy"])
     
         else:
             print("unknown option")

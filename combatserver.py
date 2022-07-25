@@ -1,10 +1,10 @@
 #
 #   Combat server in Python
 #   Binds REP socket to tcp://*:5555
-#   Expects b"Fight" from gameclient, replies with a JSON of the randomly selected enemy
+#   Expects b"Fight" from gameclient, replies with a string containing 
+#   a dictionary of the randomly selected enemy
 #
 
-import time
 import zmq
 import random
 
