@@ -25,4 +25,5 @@ project.
 
 # UML Sequence Diagram:
 
-![9](https://user-images.githubusercontent.com/86032576/180683636-054f70a5-ee5d-4634-92b3-7743fd5c578e.jpg)
+![UML Sequence Diagram](https://user-images.githubusercontent.com/86032576/180701231-7f57e06a-f5a1-415b-8908-e9a8b6548f38.JPG)
+
